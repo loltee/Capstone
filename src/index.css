@@ -17,6 +17,13 @@ a {
   box-shadow: none;
   border-color: inherit;
 }
+.button {
+  background-color: navy;
+  color: white;
+  font-size: 14px;
+  padding: 13px 33px;
+  border-radius: 15px;
+}
 
 /* Header Part */
 .header-top-strip {
@@ -68,9 +75,61 @@ a {
 .gap-30 {
   gap: 30px;
 }
-.header-bottom.dropdown-menu {
+
+.dropdown {
+  border-bottom: 1px solid silver;
+  padding: 10px;
+  margin-bottom: 1px;
+  padding: auto;
+}
+.dropdown-toggle {
+  transform: translate(10px, 10px);
+}
+.dropdown-item {
+  padding: right 50%;
+}
+/* Header Part End Here */
+
+/* footer Start */
+footer {
+  background-color: navy;
+}
+footer:not(:first-child) {
+  border-top: 1px solid red;
+}
+footer.input-group-text {
   background-color: silver;
-  width: 100%;
+  padding: 8px 17px;
+  font-size: 14px;
+}
+/* Footer End */
+
+/* Home Page Start */
+.main-banner-content {
+  position: inherit;
+  top: 50;
+  bottom: 40%;
+  left: 15%;
+}
+.main-banner-content h1 {
+  color: maroon;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 24px;
+  font-style: italic;
+}
+.main-banner-content h2 {
+  font-size: 52px;
+  line-height: 54px;
+  letter-spacing: -2px;
+  font-weight: 500;
+  padding: 0;
+  text-transform: none;
+}
+.main-banner-content p {
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.4;
 }
 
-/* Header Part End Here */
+/* Home page End */
