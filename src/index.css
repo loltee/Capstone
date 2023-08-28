@@ -24,6 +24,10 @@ a {
   padding: 13px 33px;
   border-radius: 15px;
 }
+.button:hover {
+  background-color: orangered;
+  color: maroon;
+}
 
 /* Header Part */
 .header-top-strip {
@@ -110,6 +114,7 @@ footer.input-group-text {
   top: 50;
   bottom: 40%;
   left: 15%;
+  flex-wrap: wrap;
 }
 .main-banner-content h1 {
   color: maroon;
@@ -130,6 +135,44 @@ footer.input-group-text {
   font-size: 18px;
   line-height: 28px;
   letter-spacing: 0.4;
+}
+
+.small-banner-content {
+  position: absolute;
+  top: 50;
+  bottom: 40%;
+  left: 53%;
+  right: 1%;
+}
+.small-banner-content h1 {
+  color: maroon;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 24px;
+  font-style: italic;
+}
+.small-banner-content h2 {
+  font-size: 32px;
+  line-height: 54px;
+  letter-spacing: -2px;
+  font-weight: 500;
+  padding: 0;
+  text-transform: none;
+}
+.small-banner-content p {
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.4;
+}
+.small-banner {
+  width: 45%;
+}
+.catbanner-02 {
+  position: absolute;
+  top: 50;
+  bottom: 40%;
+  left: auto;
+  right: auto;
 }
 
 /* Home page End */
