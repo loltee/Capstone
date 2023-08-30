@@ -110,11 +110,9 @@ footer.input-group-text {
 
 /* Home Page Start */
 .main-banner-content {
-  position: inherit;
-  top: 50;
-  bottom: 40%;
-  left: 15%;
-  flex-wrap: wrap;
+  position: relative;
+  bottom: 355px;
+  left: 60px;
 }
 .main-banner-content h1 {
   color: maroon;
@@ -139,10 +137,8 @@ footer.input-group-text {
 
 .small-banner-content {
   position: absolute;
-  top: 50;
-  bottom: 40%;
-  left: 53%;
-  right: 1%;
+  top: 11%;
+  left: 12%;
 }
 .small-banner-content h1 {
   color: maroon;
@@ -166,6 +162,8 @@ footer.input-group-text {
 }
 .small-banner {
   width: 45%;
+  position: center;
+  text-align: center;
 }
 .catbanner-02 {
   position: absolute;
@@ -173,6 +171,18 @@ footer.input-group-text {
   bottom: 40%;
   left: auto;
   right: auto;
+}
+.tablet {
+  width: 230%;
+  height: 100%;
+  margin-left: 20px;
+  text-align: center;
+}
+.headphone {
+  width: 230%;
+  height: 100%;
+  margin-left: 160px;
+  text-align: center;
 }
 
 /* Home page End */

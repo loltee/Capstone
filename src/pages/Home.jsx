@@ -3,6 +3,7 @@
 // import Header from "../components/Header";
 // import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
+import Container from "react-bootstrap/Container";
 
 const Home = () => {
   return (
@@ -17,26 +18,26 @@ const Home = () => {
                   className="img-fluid rounded-3"
                   alt="main banner"
                 />
-                <div className="main-banner-content position-absolute">
-                  <h1>Awesome Probuds</h1>
-                  <h2>iPad S14+ Pro</h2>
-                  <p>From $999.00 or $37.40/mo</p>
-                  <Link className="button">BUY NOW</Link>
+                <div className="main-banner-content">
+                  <h1>Awsome Probuds</h1>
+                  <h2>Beats by Dre</h2>
+                  <p>Starting at $699 or $34.40 mo</p>
+                  <Link className="button">Buy Now</Link>
                 </div>
               </div>
             </div>
             <div className="col-6">
-              <div className="d-flex flex-wrap gap-10 justify-content-between align-items-center">
-                <div className="small-banner postion-relative p-3">
+              <div className="d-flex flex-direction gap-2 justify-content-center align-items-center">
+                <div className="small-banner postion-absolute justify-content-center p-3">
                   <img
                     src="images/catbanner-01.jpg "
                     className="img-fluid rounded-3"
                     alt="main banner"
                   />
-                  <div className="small-banner-content position-absolute">
-                    <h1> Hot Sale</h1>
-                    <h2>2024 Macbooks</h2>
-                    <p>From $1499.00 or $98.80/mo</p>
+                  <div className="macbook-banner-content">
+                    <h1></h1>
+                    <h2></h2>
+                    <p></p>
                   </div>
                 </div>
                 <div className="small-banner postion-relative p-3">
@@ -45,34 +46,38 @@ const Home = () => {
                     className="img-fluid rounded-3"
                     alt="main banner"
                   />
-                  <div className="catbanner-02 position-absolute">
-                    <h1> New New New</h1>
-                    <h2>Tablets</h2>
-                    <p>From $145.00 or $55.50/mo</p>
+                  <div className="watch ">
+                    <h1> </h1>
+                    <h2></h2>
+                    <p></p>
                   </div>
                 </div>
               </div>
-              <div className="small-banner postion-relative p-3">
-                <img
-                  src="images/catbanner-03.jpg "
-                  className="img-fluid rounded-3"
-                  alt="main banner"
-                />
-                <div className="small-banner-content position-absolute">
-                  <h1> Hot Sale</h1>
-                  <h2>2024 Macbooks</h2>
-                  <p>From $1499.00 or $98.80/mo</p>
-                </div>
-                <div className="small-banner postion-relative p-3">
-                  <img
-                    src="images/catbanner-04.jpg "
-                    className="img-fluid rounded-3"
-                    alt="main banner"
-                  />
-                  <div className="small-banner-content position-absolute">
-                    <h1> Hot Sale</h1>
-                    <h2>2024 Macbooks</h2>
-                    <p>From $1499.00 or $98.80/mo</p>
+              <div className="col-6">
+                <div className="d-flex flex-direction gap-2 justify-content-center align-items-center">
+                  <div className="small-banner postion-inherit justify-content-center p-3">
+                    <img
+                      src="images/catbanner-03.jpg "
+                      className="tablet rounded-3"
+                      alt="main banner"
+                    />
+                    <div className="macbook-banner-content">
+                      <h1></h1>
+                      <h2></h2>
+                      <p></p>
+                    </div>
+                  </div>
+                  <div className="small-banner postion-relative p-3">
+                    <img
+                      src="images/catbanner-04.jpg "
+                      className="headphone rounded-3"
+                      alt="main banner"
+                    />
+                    <div className="watch ">
+                      <h1> </h1>
+                      <h2></h2>
+                      <p></p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -86,4 +91,6 @@ const Home = () => {
 
 export default Home;
 
-// when using rounded-3 it makes the image corners and size rounded by 3px.
+{
+  /* when using rounder-3 it makes the image corners and size rounded by 3px */
+}
