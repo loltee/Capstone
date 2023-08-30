@@ -27,17 +27,17 @@ const Home = () => {
               </div>
             </div>
             <div className="col-6">
-              <div className="d-flex flex-direction gap-2 justify-content-center align-items-center">
-                <div className="small-banner postion-absolute justify-content-center p-3">
+              <div className="d-flex flex-wrap gap-2 justify-content-center align-items-center">
+                <div className="macbook small-banner postion-relative justify-content-center p-3">
                   <img
                     src="images/catbanner-01.jpg "
                     className="img-fluid rounded-3"
                     alt="main banner"
                   />
                   <div className="macbook-banner-content">
-                    <h1></h1>
-                    <h2></h2>
-                    <p></p>
+                    <h5>All New Macbooks</h5>
+                    <h2>Macbook Air</h2>
+                    <p>$1299 or $98.00 mo</p>
                   </div>
                 </div>
                 <div className="small-banner postion-relative p-3">
@@ -55,7 +55,7 @@ const Home = () => {
               </div>
               <div className="col-6">
                 <div className="d-flex flex-direction gap-2 justify-content-center align-items-center">
-                  <div className="small-banner postion-inherit justify-content-center p-3">
+                  <div className="small-banner postion-relative justify-content-center p-3">
                     <img
                       src="images/catbanner-03.jpg "
                       className="tablet rounded-3"

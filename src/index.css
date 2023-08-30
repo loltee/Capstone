@@ -42,7 +42,8 @@ a {
 }
 .row {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 .cal-2 {
   flex: 1;
@@ -109,9 +110,13 @@ footer.input-group-text {
 /* Footer End */
 
 /* Home Page Start */
+
+.main-banner-1 {
+  position: relative;
+}
 .main-banner-content {
   position: relative;
-  bottom: 355px;
+  bottom: 300px;
   left: 60px;
 }
 .main-banner-content h1 {
@@ -162,13 +167,11 @@ footer.input-group-text {
 }
 .small-banner {
   width: 45%;
-  position: center;
+  margin-top: center;
   text-align: center;
 }
 .catbanner-02 {
   position: absolute;
-  top: 50;
-  bottom: 40%;
   left: auto;
   right: auto;
 }
@@ -183,6 +186,26 @@ footer.input-group-text {
   height: 100%;
   margin-left: 160px;
   text-align: center;
+}
+.macbook-banner-content {
+  position: relative;
+  bottom: 90px;
+  /* background-color: aqua; */
+  /* left: 53%;
+  bottom: 54%; */
+}
+.macbook-banner-content h5 {
+  color: maroon;
+  font-style: italic;
+}
+.macbook {
+  /* background-color: red; */
+  position: relative;
+  top: 50px;
+}
+.img-fluid {
+  position: relative;
+  top: 65px;
 }
 
 /* Home page End */
