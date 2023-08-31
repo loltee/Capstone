@@ -113,8 +113,23 @@ const Home = () => {
                 <div>
                   <img src="images/service-05.png" alt="services" />
                   <h6>Secure Payments</h6>
-                  <p>Pay with ease</p>
+                  <p>Pay with ease class</p>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="home-wrapper-2 py-5">
+        <div className="container-xxl">
+          <div className="col-12">
+            <div className="categories d-flex justify-content-between align-items-center">
+              <div className="d-flex gap-30 align-items-center justify-content-center">
+                <img src="images/camera.jpg" alt="camera" />
+              </div>
+              <div>
+                <h6>Cameras</h6>
+                <p>5 Items</p>
               </div>
             </div>
           </div>
