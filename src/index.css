@@ -236,5 +236,15 @@ footer.input-group-text {
   color: maroon;
   font-style: italic;
 }
+.beats-banner-content {
+  /* background-color: aqua; */
+  position: absolute;
 
+  right: -210px;
+  bottom: 50px;
+}
+.beats-banner-content h5 {
+  color: maroon;
+  font-style: italic;
+}
 /* Home page End */

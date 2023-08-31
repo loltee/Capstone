@@ -67,16 +67,16 @@ const Home = () => {
                       <p>$599 or $45.80 mo</p>
                     </div>
                   </div>
-                  <div className="small-banner postion-relative p-3">
+                  <div className=" beats small-banner position-relative justify-content-center align-items-center p-3">
                     <img
                       src="images/catbanner-04.jpg "
                       className="headphone rounded-3"
                       alt="main banner"
                     />
-                    <div className="watch ">
-                      <h1> </h1>
-                      <h2></h2>
-                      <p></p>
+                    <div className="beats-banner-content">
+                      <h5>New Brands</h5>
+                      <h2>Bose</h2>
+                      <p>$299 or $25.00 mo</p>
                     </div>
                   </div>
                 </div>
