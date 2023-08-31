@@ -14,7 +14,7 @@ const Home = () => {
             <div className="col-6">
               <div className="main-banner position-relative p-3">
                 <img
-                  src="images/main-banner-1.jpg "
+                  src="images/main-banner-1.jpg"
                   className="img-fluid rounded-3"
                   alt="main banner"
                 />
@@ -79,6 +79,41 @@ const Home = () => {
                       <p>$299 or $25.00 mo</p>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="home-wrapper-2 py-5">
+        <div className="container-xxl">
+          <div className="row">
+            <div className="col-12">
+              <div className="services d-flex align-items-center justify-content-between">
+                <div>
+                  <img src="images/service.png" alt="services" />
+                  <h6>Free Shipping</h6>
+                  <p>Over $100</p>
+                </div>
+                <div>
+                  <img src="images/service-02.png" alt="services" />
+                  <h6>Special Offers</h6>
+                  <p>Get up to 35% off</p>
+                </div>
+                <div>
+                  <img src="images/service-03.png" alt="services" />
+                  <h6>Customer Support 24/7</h6>
+                  <p>Need Help? We are here!</p>
+                </div>
+                <div>
+                  <img src="images/service-04.png" alt="services" />
+                  <h6>Affordable Prices</h6>
+                  <p>Cheaper than Most!</p>
+                </div>
+                <div>
+                  <img src="images/service-05.png" alt="services" />
+                  <h6>Secure Payments</h6>
+                  <p>Pay with ease</p>
                 </div>
               </div>
             </div>

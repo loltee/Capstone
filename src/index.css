@@ -110,7 +110,12 @@ footer.input-group-text {
 /* Footer End */
 
 /* Home Page Start */
-
+.main-banner {
+  height: 500px;
+  width: 700px;
+  right: 250px;
+  margin-bottom: 90px;
+}
 .main-banner-1 {
   position: relative;
 }
@@ -247,4 +252,11 @@ footer.input-group-text {
   color: maroon;
   font-style: italic;
 }
+
+/* home wrapper-2 start */
+.home-wrapper-2 {
+  background-color: silver;
+}
+
+/* home wrapper-2 end */
 /* Home page End */
