@@ -122,14 +122,16 @@ const Home = () => {
       </section>
       <section className="home-wrapper-2 py-5">
         <div className="container-xxl">
-          <div className="col-12">
-            <div className="categories d-flex justify-content-between align-items-center">
-              <div className="d-flex gap-30 align-items-center justify-content-center">
-                <img src="images/camera.jpg" alt="camera" />
-              </div>
-              <div>
-                <h6>Cameras</h6>
-                <p>5 Items</p>
+          <div className="row">
+            <div className="col-12">
+              <div className="categories d-flex justify-content-between align-items-center position-relative px-10">
+                <div className="cameras d-flex align-items-between">
+                  <h6>Cameras</h6>
+                  <p>10 Items</p>
+                  <div className="camera position-relative translate-middle-x start-10 end-10 ">
+                    <img src="images/camera.jpg" alt="camera" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>

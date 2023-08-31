@@ -264,7 +264,21 @@ footer.input-group-text {
 .categories {
   background-color: white;
   box-shadow: 10px;
-  padding: 15px;
+  padding: 60px;
+}
+.categories h6 {
+  position: relative;
+  bottom: 10px;
+}
+.cameras p {
+  /* background-color: aqua; */
+  position: absolute;
+  top: 30%;
+}
+.camera {
+  background-color: aqua;
+  top: 42px;
+  right: 20px;
 }
 
 /* categories end */
