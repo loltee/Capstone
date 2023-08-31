@@ -191,8 +191,7 @@ footer.input-group-text {
   position: relative;
   bottom: 90px;
   /* background-color: aqua; */
-  /* left: 53%;
-  bottom: 54%; */
+  right: 10%;
 }
 .macbook-banner-content h5 {
   color: maroon;
@@ -206,6 +205,36 @@ footer.input-group-text {
 .img-fluid {
   position: relative;
   top: 65px;
+}
+.watch-banner-content {
+  position: relative;
+  /* background-color: aqua; */
+  bottom: 35px;
+  right: 15%;
+  top: -95px;
+}
+.watch-banner-content h5 {
+  color: maroon;
+  font-style: italic;
+}
+
+.watch-banner-content h2 {
+  text-shadow: 55px;
+}
+
+.watch-banner {
+  /* background-color: aqua; */
+  top: 50px;
+}
+.tablet-banner-content {
+  /* background-color: aqua; */
+  position: absolute;
+  bottom: 19%;
+  left: 30%;
+}
+.tablet-banner-content h5 {
+  color: maroon;
+  font-style: italic;
 }
 
 /* Home page End */

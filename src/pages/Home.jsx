@@ -12,7 +12,7 @@ const Home = () => {
         <div className="container-xxl">
           <div className="row">
             <div className="col-6">
-              <div className="main-banner postion-relative p-3">
+              <div className="main-banner position-relative p-3">
                 <img
                   src="images/main-banner-1.jpg "
                   className="img-fluid rounded-3"
@@ -28,7 +28,7 @@ const Home = () => {
             </div>
             <div className="col-6">
               <div className="d-flex flex-wrap gap-2 justify-content-center align-items-center">
-                <div className="macbook small-banner postion-relative justify-content-center p-3">
+                <div className="macbook small-banner position-relative justify-content-center p-3">
                   <img
                     src="images/catbanner-01.jpg "
                     className="img-fluid rounded-3"
@@ -40,31 +40,31 @@ const Home = () => {
                     <p>$1299 or $98.00 mo</p>
                   </div>
                 </div>
-                <div className="small-banner postion-relative p-3">
+                <div className="watch-banner small-banner position-relative justify-content-center p-3">
                   <img
                     src="images/catbanner-02.jpg "
                     className="img-fluid rounded-3"
                     alt="main banner"
                   />
-                  <div className="watch ">
-                    <h1> </h1>
-                    <h2></h2>
-                    <p></p>
+                  <div className="watch-banner-content">
+                    <h5>Adventure Awaits </h5>
+                    <h2>Watch Ultra</h2>
+                    <p>$799 or $50.00 mo</p>
                   </div>
                 </div>
               </div>
               <div className="col-6">
-                <div className="d-flex flex-direction gap-2 justify-content-center align-items-center">
-                  <div className="small-banner postion-relative justify-content-center p-3">
+                <div className="d-flex flex-wrap gap-2 justify-content-center align-items-center">
+                  <div className="tablet-banner small-banner position-relative justify-content-center p-3">
                     <img
                       src="images/catbanner-03.jpg "
                       className="tablet rounded-3"
                       alt="main banner"
                     />
-                    <div className="macbook-banner-content">
-                      <h1></h1>
-                      <h2></h2>
-                      <p></p>
+                    <div className="tablet-banner-content">
+                      <h5>New Tablets</h5>
+                      <h2>Samsung</h2>
+                      <p>$599 or $45.80 mo</p>
                     </div>
                   </div>
                   <div className="small-banner postion-relative p-3">
