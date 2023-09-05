@@ -310,5 +310,48 @@ footer.input-group-text {
   margin: 10px;
   margin-right: 100px;
 }
+
+.card-wrapper {
+  background-color: white;
+}
+.sectionheading {
+  font-size: 25px;
+  line-height: 22px;
+  font-weight: 500px;
+  margin-bottom: 60px;
+}
 /* categories end */
 /* Home page End */
+
+/* blog card start */
+.blog-card {
+  background-color: white;
+  border-radius: 10px;
+  position: relative;
+  top: -20px;
+}
+
+.blog-card img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  top: 40px;
+}
+.blog-content {
+  padding: 15px;
+}
+.img-fluid {
+  position: static;
+}
+
+/* blog card ends */
+
+/* Product card starts */
+.product-card {
+  padding: 15px;
+  background-color: white;
+  border-radius: 10px;
+}
+.product-card .product-details h6 {
+  color: silver;
+}
+/* Product cart ends */
