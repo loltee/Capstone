@@ -339,9 +339,6 @@ footer.input-group-text {
 .blog-content {
   padding: 15px;
 }
-/* .img-fluid {
-  position: static;
-} */
 
 /* blog card ends */
 
@@ -350,18 +347,31 @@ footer.input-group-text {
   padding: 15px;
   background-color: white;
   border-radius: 10px;
+  overflow: hidden;
+}
+.product-card:hover .action-bar {
+  right: 10px;
 }
 .product-card .product-details h6 {
   color: orangered;
   font-size: 25px;
 }
 .product-card .product-details h5 {
-  font-size: 15px;
+  font-size: 22px;
   color: black;
 }
 .product-card .product-details p.price {
   font-size: 20px;
   color: black;
+}
+.action-bar {
+  top: 10%;
+  right: -23px;
+  transition: 0.3s;
+}
+.wishlist-icon {
+  top: 2%;
+  right: 15px;
 }
 
 /* Product cart ends */
