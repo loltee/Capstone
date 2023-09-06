@@ -339,9 +339,9 @@ footer.input-group-text {
 .blog-content {
   padding: 15px;
 }
-.img-fluid {
+/* .img-fluid {
   position: static;
-}
+} */
 
 /* blog card ends */
 
@@ -352,6 +352,16 @@ footer.input-group-text {
   border-radius: 10px;
 }
 .product-card .product-details h6 {
-  color: silver;
+  color: orangered;
+  font-size: 25px;
 }
+.product-card .product-details h5 {
+  font-size: 15px;
+  color: black;
+}
+.product-card .product-details p.price {
+  font-size: 20px;
+  color: black;
+}
+
 /* Product cart ends */

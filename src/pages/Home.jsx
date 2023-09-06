@@ -248,9 +248,7 @@ const Home = () => {
         <div className="container-xxl">
           <div className="row">
             <div className="col-12">
-              <h3 className="sectionheading">
-                Check Out What Others Have To Say
-              </h3>
+              <h3 className="sectionheading">Keep Up To Date</h3>
             </div>
             <BlogCard />
             <BlogCard />
