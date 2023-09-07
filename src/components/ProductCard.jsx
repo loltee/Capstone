@@ -17,8 +17,7 @@ const ProductCard = () => {
           </Link>
         </div>
         <div className="product-image">
-          <img src="images/watch.jpg" alt="product" />
-          <img src="images/SamsungG23.avif" alt="cellphone" />
+          <img src="images/pinkwatch.jpg" alt="product image" />
         </div>
         <div className="product-details">
           <h6 className="brand">Samsung</h6>
