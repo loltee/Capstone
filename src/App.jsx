@@ -8,6 +8,7 @@ import Contact from "./pages/Contact";
 import "./index.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import OurStore from "./pages/ourStore";
 
 function App() {
   return (
@@ -19,12 +20,10 @@ function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="/store" element={<OurStore />} />
         </Routes>
         <Footer />
       </BrowserRouter>
-      <div>
-        <Sidenav />
-      </div>
     </>
   );
 }
