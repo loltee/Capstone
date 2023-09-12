@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Rating } from "react-simple-star-rating";
+import { getProduct } from "../api";
 
 const ProductCard = () => {
   const [rating, setRating] = useState(0);
@@ -25,7 +26,7 @@ const ProductCard = () => {
     }
     getProduct();
   }, []);
-
+  console.log(product);
   return (
     <div className="col-3">
       <div className="product-card position-relative">

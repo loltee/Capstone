@@ -18,3 +18,8 @@ fetch("https://fakestoreapi.com/auth/login", {
   .then((res) => res.json())
   .then((json) => console.log(json));
 
+export async function getStore(){
+
+
+  
+}
