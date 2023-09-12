@@ -9,6 +9,8 @@ import "./index.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import OurStore from "./pages/ourStore";
+import SignUpForm from "./components/SignUpForm";
+import Login from "./components/login";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
           <Route path="/store" element={<OurStore />} />
+          <Route path="/signup" element={<SignUpForm />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
         <Footer />
       </BrowserRouter>

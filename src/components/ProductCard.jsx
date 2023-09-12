@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Rating } from "react-simple-star-rating";
 
@@ -7,6 +7,24 @@ const ProductCard = () => {
   const handleRating = (rate) => {
     setRating(rate);
   };
+
+  const [product, setProduct] = useState();
+  const [error, setError] = useState();
+  const baseUrl = "https://fakestoreapi.com/";
+
+  useEffect(() => {
+    async function getProduct() {
+      const response = await fetch(`${baseUrl}/product/1`);
+      const APIResponse = await response.json();
+
+      if (APIResponse.success) {
+        setProduct(APIResponse.data.product);
+      } else {
+        setError(error.message);
+      }
+    }
+    getProduct();
+  }, []);
 
   return (
     <div className="col-3">
