@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 import Meta from "../components/meta";
 import { useNavigate } from "react-router-dom";
 
-const OurStore = () => {
+const OurStore = ({ cart, setCart }) => {
   const [store, setStore] = useState([]);
   const [error, setError] = useState(null);
   const baseUrl = "https://fakestoreapi.com";
-  const [cart, setCart] = useState([]);
+
   // const [item, setItem] = useState("");
   const navigate = useNavigate();
 
@@ -32,7 +32,7 @@ const OurStore = () => {
   const addItem = (product) => {
     console.log("hello");
     setCart([...cart, product]);
-    navigate("/cart", { state: product });
+    navigate("/cart");
   };
   console.log(cart);
   return (

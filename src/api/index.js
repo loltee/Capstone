@@ -21,15 +21,9 @@ export async function getCart() {
   const baseUrl = "https://fakestoreapi.com/";
   // const response = await fetch();
 
-  fetch(baseUrl)
+  fetch("https://fakestoreapi.com/carts")
     .then((res) => res.json())
     .then((json) => console.log(json));
-
-  fetch("https://fakestoreapi.com/cart"),
-    {
-      method: "GET",
-      body: JSON.stringify,
-    };
 }
 
 export async function getStore() {}

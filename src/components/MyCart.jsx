@@ -3,8 +3,7 @@ import React from "react";
 import { getProduct } from "../api";
 import { useLocation } from "react-router-dom";
 
-function MyCart(product) {
-  const [cart, setCart] = useState([]);
+function MyCart({ cart, setCart }) {
   const [item, setItem] = useState("");
   const baseUrl = "https://fakestoreapi.com/";
   const location = useLocation();
@@ -12,7 +11,7 @@ function MyCart(product) {
   useEffect(() => {
     // async function getCart() {
     //   try {
-    //     const response = await fetch(`${baseUrl}cart`);
+    //     const response = await fetch(`${baseUrl}carts`);
     //     const APIResponse = await response.json();
     //     setCart(APIResponse);
     //   } catch (error) {
@@ -20,9 +19,9 @@ function MyCart(product) {
     //   }
     // }
     // getCart();
-    if (location.state === null) {
-      setCart((prevcart) => [...prevcart, !location.state]);
-    }
+    // if (location.state === null) {
+    //   setCart((prevcart) => [...prevcart, !location.state]);
+    // }
   }, []);
   console.log(cart);
 
