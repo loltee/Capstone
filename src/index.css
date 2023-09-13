@@ -21,10 +21,14 @@
 .shopping-cart-container {
   max-width: 400px;
   margin: 10%;
-  background-color: #fff;
+  background-color: lightgrey;
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flow-root;
+  box-shadow: 0 55px 60px rgba(0, 0, 0, 0.1);
+  height: 400px;
+  margin-left: 559px;
+  border: 3px solid black;
 }
 
 .cart-title {
