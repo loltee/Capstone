@@ -9,8 +9,8 @@ export async function getProduct() {
   fetch("https://fakestoreapi.com/auth/login", {
     method: "POST",
     body: JSON.stringify({
-      username: "pompom23",
-      password: "oreo24",
+      username: "",
+      password: "",
     }),
   })
     .then((res) => res.json())
@@ -22,6 +22,14 @@ export async function getCart() {
   // const response = await fetch();
 
   fetch("https://fakestoreapi.com/carts")
+    .then((res) => res.json())
+    .then((json) => console.log(json));
+}
+
+export async function Login() {
+  const baseUrl = "https://fakestoreapi.com/";
+
+  fetch("https://fakestoreapi.com/users")
     .then((res) => res.json())
     .then((json) => console.log(json));
 }
