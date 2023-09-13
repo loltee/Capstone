@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import OurStore from "./pages/ourStore";
 import SignUpForm from "./components/SignUpForm";
 import Login from "./components/login";
+import MyCart from "./components/MyCart";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/store" element={<OurStore />} />
           <Route path="/signup" element={<SignUpForm />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/cart" element={<MyCart />} />
         </Routes>
         <Footer />
       </BrowserRouter>

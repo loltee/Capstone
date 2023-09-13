@@ -2,11 +2,15 @@ import React from "react";
 import Breadcrumb from "../components/Breadcrumb";
 import { useEffect, useState } from "react";
 import Meta from "../components/meta";
+import { useNavigate } from "react-router-dom";
 
 const OurStore = () => {
   const [store, setStore] = useState([]);
   const [error, setError] = useState(null);
   const baseUrl = "https://fakestoreapi.com";
+  const [cart, setCart] = useState([]);
+  // const [item, setItem] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function getStore() {
@@ -25,6 +29,12 @@ const OurStore = () => {
 
   console.log("store", store);
 
+  const addItem = (product) => {
+    console.log("hello");
+    setCart([...cart, product]);
+    navigate("/cart", { state: product });
+  };
+  console.log(cart);
   return (
     <>
       {/* {" "}
@@ -73,6 +83,9 @@ const OurStore = () => {
               <h1>{product.title}</h1>
               {<img src={product.image} alt={product.title} />}
               <li>Price: {product.price}</li>
+              <button className="add-button" onClick={() => addItem(product)}>
+                Add
+              </button>
             </div>
           );
         })}
