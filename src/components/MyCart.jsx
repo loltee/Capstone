@@ -1,9 +1,25 @@
-import React {useState} from 'react'
+
+import React {useState, useEffect} from 'react'
 
 function MyCart() {
     
     const [cart, setCart] = useState([]);
   const [item, setItem] = useState('');
+  const baseUrl = "https://fakestoreapi.com/"
+
+  useEffect(() => {
+    async function getCart() {
+      const response = await fetch(`${baseUrl}/product/1`);
+      const APIResponse = await response.json();
+
+      if (APIResponse.success) {
+        setProduct(APIResponse.data.product);
+      } else {
+        setError(error.message);
+      }
+    }
+    getProduct();
+  }, []);
 
   const addItem = () => {
     if (item.trim() !== '') {
