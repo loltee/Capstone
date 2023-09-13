@@ -5,7 +5,6 @@ const Breadcrumb = (props) => {
   const { title } = props;
   return (
     <div className="breadcrumb mb-0 py-4">
-      BreadCrumb
       <div className="container-xxl">
         <div className="row">
           <div className="col-12">

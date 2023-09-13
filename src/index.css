@@ -543,3 +543,35 @@ footer.input-group-text {
   margin-left: 52px;
 }
 /* our store ends */
+/* contact page starts */
+.contact-inner-wrapper {
+  padding: 30px 20px;
+  border-radius: 15px;
+  background-color: whitesmoke;
+  gap: 35px;
+}
+
+.contact-inner-wrapper > div {
+  width: 48%;
+}
+
+.inside {
+  font-style: italic;
+  font-size: 40px;
+  text-align: center;
+}
+.contact-inner-wrapper form. form-control {
+  background-color: antiquewhite;
+  border-radius: 10px;
+  border-color: transparent;
+  padding: 10px;
+}
+
+.contact-inner-wrapper ul {
+  list-style: none;
+}
+.touchbase {
+  margin-left: 120px;
+}
+
+/* contact page ends */
