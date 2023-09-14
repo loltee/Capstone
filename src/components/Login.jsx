@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 
+import { useNavigate } from "react-router-dom";
+
 function Login() {
   const [error, setError] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const [successMessage, setSuccessMessage] = useState("");
 
@@ -20,6 +23,8 @@ function Login() {
           password,
         }),
       });
+      console.log(response);
+      navigate("/");
     } catch (error) {
       setError(error.message);
       console.log("gettingerrormessage");

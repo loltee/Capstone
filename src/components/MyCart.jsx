@@ -8,6 +8,7 @@ function MyCart({ cart, setCart }) {
   const baseUrl = "https://fakestoreapi.com/";
   const location = useLocation();
 
+  const [quanity, setQuanity] = useState("item.price");
   useEffect(() => {
     // async function getCart() {
     //   try {
@@ -39,6 +40,7 @@ function MyCart({ cart, setCart }) {
     setCart(updatedCart);
   };
   console.log(cart.length, cart, "hello", location.state);
+
   if (cart.length > 0) {
     return (
       <div className="shopping-cart-container">
@@ -58,7 +60,8 @@ function MyCart({ cart, setCart }) {
         <ul className="cart-list">
           {cart.map((item, index) => (
             <li key={index} className="cart-item">
-              {item.title}
+              {item.price} {item.title}
+              {/* {<img src={item.image} alt={item.title} />} */}
               <button
                 className="remove-button"
                 onClick={() => removeItem(index)}

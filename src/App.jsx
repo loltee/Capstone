@@ -16,6 +16,8 @@ import { useState } from "react";
 
 function App() {
   const [cart, setCart] = useState([]);
+  const [token, setToken] = useState("");
+
   return (
     <>
       <BrowserRouter>
@@ -30,7 +32,10 @@ function App() {
             element={<OurStore cart={cart} setCart={setCart} />}
           />
           <Route path="/signup" element={<SignUpForm />} />
-          <Route path="/login" element={<Login />} />
+          <Route
+            path="/login"
+            element={<Login token={token} setToken={setToken} />}
+          />
           <Route
             path="/cart"
             element={<MyCart cart={cart} setCart={setCart} />}

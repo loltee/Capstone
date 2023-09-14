@@ -84,7 +84,7 @@ const Header = () => {
                     <img src="images/cart.svg" alt="cart" />
                     <div className="d-flex flex-column gap-10"></div>
                     <span className="badge bg-white text-dark">0</span>
-                    <p className="mb-0">$ 500</p>
+                    <p className="mb-0">$ 0</p>
                   </Link>
                 </div>
               </div>
@@ -110,12 +110,10 @@ const Header = () => {
                       </span>
                     </Dropdown.Toggle>
                     <Dropdown.Menu variant="dark">
-                      <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                      <Dropdown.Item href="#/action-2">
-                        Another action
-                      </Dropdown.Item>
+                      <Dropdown.Item href="#/action-1">Jewelry</Dropdown.Item>
+                      <Dropdown.Item href="#/action-2">Clothes</Dropdown.Item>
                       <Dropdown.Item href="#/action-3">
-                        Something else
+                        Electronics
                       </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
