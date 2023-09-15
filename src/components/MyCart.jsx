@@ -7,8 +7,9 @@ function MyCart({ cart, setCart }) {
   const [item, setItem] = useState("");
   const baseUrl = "https://fakestoreapi.com/";
   const location = useLocation();
+  const [number, setNumber] = useState(1);
 
-  const [quanity, setQuanity] = useState("item.price");
+  const [quantity, setQuantity] = useState("item.price");
   useEffect(() => {
     // async function getCart() {
     //   try {
@@ -31,15 +32,19 @@ function MyCart({ cart, setCart }) {
       setCart([...cart, item]);
       setItem("");
     }
-    console.log("herecart");
+    console.log(cart, "item was added");
   };
 
   const removeItem = (index) => {
     const updatedCart = [...cart];
+    console.log("updated cart");
     updatedCart.splice(index, 1);
     setCart(updatedCart);
   };
-  console.log(cart.length, cart, "hello", location.state);
+
+  // const updateQuanity = (id, value) => {};
+
+  console.log(cart, "hello", location.state);
 
   if (cart.length > 0) {
     return (
@@ -60,7 +65,7 @@ function MyCart({ cart, setCart }) {
         <ul className="cart-list">
           {cart.map((item, index) => (
             <li key={index} className="cart-item">
-              {item.price} {item.title}
+              {item.price} {item.title} {item.quantity}
               {/* {<img src={item.image} alt={item.title} />} */}
               <button
                 className="remove-button"
@@ -68,13 +73,16 @@ function MyCart({ cart, setCart }) {
               >
                 Remove
               </button>
+              {/* <button className="numberbutton" onClick={() => addItem(index)}>
+                Add
+              </button> */}
             </li>
           ))}
         </ul>
       </div>
     );
   } else {
-    return <p>Your Cart Is Empty</p>;
+    return <p className="emptytag">Your Cart Is Empty</p>;
   }
 }
 

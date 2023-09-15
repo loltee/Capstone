@@ -16,7 +16,9 @@ const OurStore = ({ cart, setCart }) => {
     async function getStore() {
       const response = await fetch(`${baseUrl}/products`);
       const APIResponse = await response.json();
-      console.log("APIResponse", APIResponse);
+
+      // console.log("APIResponse", APIResponse);
+      // console.log("newAPIResponse", newAPIResponse);
       if (APIResponse) {
         setStore(APIResponse);
       } else {
@@ -30,8 +32,25 @@ const OurStore = ({ cart, setCart }) => {
   console.log("store", store);
 
   const addItem = (product) => {
-    console.log("hello");
-    setCart([...cart, product]);
+    console.log("product", product);
+    // setCart([...cart, product]);
+    // navigate("/cart");
+    console.log("cart", cart[0]);
+    console.log(
+      "output",
+      cart.find((e) => e.id === product.id)
+    );
+    if (cart.find((e) => e.id === product.id)) {
+      const itemIndex = cart.findIndex(
+        (cartItem) => cartItem.id === product.id
+      );
+      const updatedCartItems = [...cart];
+      updatedCartItems[itemIndex].quantity += 1;
+      setCart(updatedCartItems);
+    } else {
+      setCart([...cart, { ...product, quantity: 1 }]);
+    }
+
     navigate("/cart");
   };
   console.log(cart);

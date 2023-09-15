@@ -13,6 +13,7 @@ import SignUpForm from "./components/SignUpForm";
 import Login from "./components/login";
 import MyCart from "./components/MyCart";
 import { useState } from "react";
+import Stripe from "stripe";
 
 function App() {
   const [cart, setCart] = useState([]);
