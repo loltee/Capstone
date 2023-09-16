@@ -1,4 +1,3 @@
-import React from "react";
 import Breadcrumb from "../components/Breadcrumb";
 import { useEffect, useState } from "react";
 import Meta from "../components/meta";

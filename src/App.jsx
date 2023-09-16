@@ -16,8 +16,8 @@ import { useState } from "react";
 import LogOut from "./components/LogOut";
 
 function App() {
-  const [cart, setCart] = useState(null);
-  const [token, setToken] = useState(null);
+  const [cart, setCart] = useState([]);
+  const [token, setToken] = useState([]);
 
   return (
     <>

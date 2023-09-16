@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import React from "react";
 import { getProduct } from "../api";
 import { useLocation } from "react-router-dom";
+import OurStore from "../pages/ourStore";
 
 function MyCart({ cart, setCart }) {
   const [item, setItem] = useState("");
