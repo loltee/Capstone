@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import { useNavigate } from "react-router-dom";
+import Breadcrumb from "./Breadcrumb";
+import Meta from "./meta";
 
 function Login({ token, setToken }) {
   const [error, setError] = useState("");
@@ -35,29 +38,44 @@ function Login({ token, setToken }) {
   }
   return (
     <div className="Login">
+      <Meta title={"Login"} />
+      <Breadcrumb title="Login" />
+
+      <div className="login-wrapper py -5 home-wrapper-2">
+        <div className="row">
+          <div className="col-12">
+            <div className="login-card"></div>
+          </div>
+        </div>
+      </div>
       <h1>Login</h1>
-      {successMessage && <p>{successMessage}</p>}
-      {error && <p>{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <label>
-          Username:{" "}
+      <form action="">
+        <div>
           <input
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            type="username"
+            name="username"
+            placeholder="Username"
+            className="form-control"
           />
-        </label>
-        <label>
-          Password:{" "}
+        </div>
+        <div>
           <input
             type="password"
-            value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
+            name="password"
+            placeholder="Password"
+            className="form-control"
           />
-        </label>
-        <button>Submit</button>
+        </div>
+        <div>
+          <Link to="/forgot-password">Forgot Password</Link>
+          <div className="d-flex juistify-content-center gap-15 align-items-center">
+            <button className="button border-0">Login</button>
+            <Link className="button">SignUp</Link>
+          </div>
+        </div>
       </form>
+      {successMessage && <p>{successMessage}</p>}
+      {error && <p>{error}</p>}
     </div>
   );
 }
