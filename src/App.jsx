@@ -13,16 +13,16 @@ import SignUpForm from "./components/SignUpForm";
 import Login from "./components/login";
 import MyCart from "./components/MyCart";
 import { useState } from "react";
-import Stripe from "stripe";
+import LogOut from "./components/LogOut";
 
 function App() {
-  const [cart, setCart] = useState([]);
-  const [token, setToken] = useState("");
+  const [cart, setCart] = useState(null);
+  const [token, setToken] = useState(null);
 
   return (
     <>
       <BrowserRouter>
-        <Header />
+        <Header token={token} />
         <Routes>
           <Route path="/" element={<Layout />} />
           <Route index element={<Home />} />
@@ -37,6 +37,7 @@ function App() {
             path="/login"
             element={<Login token={token} setToken={setToken} />}
           />
+
           <Route
             path="/cart"
             element={<MyCart cart={cart} setCart={setCart} />}

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 
-function Login() {
+function Login({ token, setToken }) {
   const [error, setError] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -23,7 +23,10 @@ function Login() {
           password,
         }),
       });
-      console.log(response);
+      const result = await response.json();
+      console.log(result);
+      console.log(result.token);
+      setToken(result.token);
       navigate("/");
     } catch (error) {
       setError(error.message);

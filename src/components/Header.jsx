@@ -2,8 +2,10 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
 import Dropdown from "react-bootstrap/Dropdown";
+import LogOut from "./LogOut";
 
-const Header = () => {
+const Header = ({ token }) => {
+  console.log("token", token);
   return (
     <>
       <header className="header-top-strip py-3">
@@ -90,6 +92,9 @@ const Header = () => {
               </div>
             </div>
           </div>
+        </div>{" "}
+        <div className="d-flex align-items-center gap-10 text-white">
+          {token && <LogOut />}
         </div>
       </header>
       <header className="header-bottom py-3">

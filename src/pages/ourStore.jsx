@@ -35,7 +35,7 @@ const OurStore = ({ cart, setCart }) => {
     console.log("product", product);
     // setCart([...cart, product]);
     // navigate("/cart");
-    console.log("cart", cart[0]);
+    console.log("cart", cart);
     console.log(
       "output",
       cart.find((e) => e.id === product.id)

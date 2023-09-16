@@ -8,39 +8,53 @@ function MyCart({ cart, setCart }) {
   const baseUrl = "https://fakestoreapi.com/";
   const location = useLocation();
   const [number, setNumber] = useState(1);
-
+  const [totalPrice, setTotalPrice] = useState(0);
   const [quantity, setQuantity] = useState("item.price");
+
   useEffect(() => {
-    // async function getCart() {
-    //   try {
-    //     const response = await fetch(`${baseUrl}carts`);
-    //     const APIResponse = await response.json();
-    //     setCart(APIResponse);
-    //   } catch (error) {
-    //     console.log(error.message);
-    //   }
-    // }
-    // getCart();
-    // if (location.state === null) {
-    //   setCart((prevcart) => [...prevcart, !location.state]);
-    // }
+    let calculatedTotal = 0;
+    cart.forEach((product) => {
+      calculatedTotal += product.price;
+    });
+    setTotalPrice(calculatedTotal);
   }, []);
-  console.log(cart);
+  // async function getCart() {
+  //   try {
+  //     const response = await fetch(`${baseUrl}carts`);
+  //     const APIResponse = await response.json();
+  //     setCart(APIResponse);
+  //   } catch (error) {
+  //     console.log(error.message);
+  //   }
+  // }
+  // getCart();
+  // if (location.state === null) {
+  //   setCart((prevcart) => [...prevcart, !location.state]);
+  // }
+
+  // console.log(cart);
 
   const addItem = () => {
     if (item.trim() !== "") {
       setCart([...cart, item]);
       setItem("");
     }
-    console.log(cart, "item was added");
   };
 
   const removeItem = (index) => {
     const updatedCart = [...cart];
-    console.log("updated cart");
+    console.log(index, "---------------");
+
     updatedCart.splice(index, 1);
     setCart(updatedCart);
+    console.log(cart);
   };
+  // useEffect(() => {
+  //   let calculatedTotal = 0;
+  //   cart.forEach((cart) => {
+  //     calculatedTotal += cart.price;
+  //   }, setTotalPrice(calculatedTotal)[cart]);
+  // });
 
   // const updateQuanity = (id, value) => {};
 
@@ -73,12 +87,10 @@ function MyCart({ cart, setCart }) {
               >
                 Remove
               </button>
-              {/* <button className="numberbutton" onClick={() => addItem(index)}>
-                Add
-              </button> */}
             </li>
           ))}
         </ul>
+        <p className="total-price">Total Price: ${totalPrice.toFixed(2)}</p>
       </div>
     );
   } else {
