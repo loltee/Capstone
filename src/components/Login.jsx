@@ -15,6 +15,7 @@ function Login({ token, setToken }) {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    console.log("hello World");
     try {
       const response = await fetch("https://fakestoreapi.com/auth/login", {
         method: "POST",
@@ -38,8 +39,8 @@ function Login({ token, setToken }) {
   }
   return (
     <div className="Login">
-      <Meta title={"Login"} />
-      <Breadcrumb title="Login" />
+      <Meta title={""} />
+      <Breadcrumb title="" />
 
       <div className="login-wrapper py -5 home-wrapper-2">
         <div className="row">
@@ -49,13 +50,16 @@ function Login({ token, setToken }) {
         </div>
       </div>
       <h1>Login</h1>
-      <form action="">
+      <form>
         <div>
           <input
             type="username"
             name="username"
             placeholder="Username"
             className="form-control"
+            onChange={(e) => {
+              setUsername(e.target.value);
+            }}
           />
         </div>
         <div>
@@ -64,12 +68,17 @@ function Login({ token, setToken }) {
             name="password"
             placeholder="Password"
             className="form-control"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
           />
         </div>
         <div>
           <Link to="/forgot-password">Forgot Password</Link>
-          <div className="d-flex juistify-content-center gap-15 align-items-center">
-            <button className="button border-0">Login</button>
+          <div className=" d-flex justify-content-center gap-15 align-items-center">
+            <button onClick={handleSubmit} className="button border-0">
+              Login
+            </button>
             <Link className="button">SignUp</Link>
           </div>
         </div>

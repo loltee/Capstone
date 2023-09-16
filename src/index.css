@@ -28,6 +28,11 @@
   margin-bottom: 10px;
 }
 
+.tiny {
+  align-items: center;
+  background-color: #007bff;
+}
+
 .shopping-cart-container {
   max-width: 400px;
   margin: 10%;
