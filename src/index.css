@@ -28,11 +28,6 @@
   margin-bottom: 10px;
 }
 
-.tiny {
-  align-items: center;
-  background-color: #007bff;
-}
-
 .shopping-cart-container {
   max-width: 400px;
   margin: 10%;
@@ -206,6 +201,11 @@ a {
 .dropdown-item {
   padding: right 50%;
 }
+.mic-group-text {
+  background-color: gold;
+  margin: 10px;
+}
+
 /* Header Part End Here */
 
 /* footer Start */
@@ -215,11 +215,13 @@ footer {
 footer:not(:first-child) {
   border-top: 1px solid red;
 }
-footer.input-group-text {
+.input-group-text {
   background-color: silver;
   padding: 8px 17px;
   font-size: 14px;
+  margin: 10px;
 }
+
 /* Footer End */
 
 /* Home Page Start */

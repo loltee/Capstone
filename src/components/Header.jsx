@@ -44,7 +44,7 @@ const Header = ({ token }) => {
                   aria-label="Search Product Here"
                   aria-describedby="basic-addon2"
                 />
-                <span className="input-group-text p-3" id="basic-addon2">
+                <span className="mic-group-text p-3" id="basic-addon2">
                   <BsSearch className="fs-6" />
                 </span>
               </div>
