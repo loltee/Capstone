@@ -17,13 +17,19 @@ import LogOut from "./components/LogOut";
 
 function App() {
   const [cart, setCart] = useState([]);
-  const [token, setToken] = useState([]);
+  const [token, setToken] = useState(null);
   const [products, setProducts] = useState([]);
-
+  console.log("headertoken");
+  console.log(token);
   return (
     <>
       <BrowserRouter>
-        <Header token={token} cart={cart} setProductsHandler={setProducts} />
+        <Header
+          token={token}
+          cart={cart}
+          setProductsHandler={setProducts}
+          setToken={setToken}
+        />
         <Routes>
           <Route path="/" element={<Layout />} />
           <Route path="/home" index element={<Home />} />
@@ -45,7 +51,7 @@ function App() {
             path="/login"
             element={<Login token={token} setToken={setToken} />}
           />
-
+          <Route path="/logout" element={<LogOut />} />
           <Route
             path="/cart"
             element={<MyCart cart={cart} setCart={setCart} />}

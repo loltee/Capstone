@@ -15,7 +15,8 @@ function Login({ token, setToken }) {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    console.log("hello World");
+
+    console.log("hi");
     try {
       const response = await fetch("https://fakestoreapi.com/auth/login", {
         method: "POST",
@@ -31,7 +32,7 @@ function Login({ token, setToken }) {
       console.log(result);
       console.log(result.token);
       setToken(result.token);
-      // navigate("/contact");
+      navigate("/home");
     } catch (error) {
       setError(error.message);
       console.log("gettingerrormessage");

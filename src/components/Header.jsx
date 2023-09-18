@@ -4,7 +4,7 @@ import { BsSearch } from "react-icons/bs";
 import Dropdown from "react-bootstrap/Dropdown";
 import LogOut from "./LogOut";
 
-const Header = ({ token, cart, setProductsHandler }) => {
+const Header = ({ token, cart, setProductsHandler, setToken }) => {
   const totalQuantity = (cart || []).reduce(
     (total, item) => total + item.quantity,
     0
@@ -121,7 +121,7 @@ const Header = ({ token, cart, setProductsHandler }) => {
           </div>
         </div>{" "}
         <div className="d-flex align-items-center gap-10 text-white">
-          {token && <LogOut />}
+          {token && <LogOut setToken={setToken} />}
         </div>
       </header>
       <header className="header-bottom py-3">
