@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Sidenav from "./components/sidenav";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
-import About from "./pages/ABout";
+
 import Contact from "./pages/Contact";
 import "./index.css";
 import Header from "./components/Header";
@@ -14,6 +14,7 @@ import Login from "./components/login";
 import MyCart from "./components/MyCart";
 import { useState } from "react";
 import LogOut from "./components/LogOut";
+import ForgotPassword from "./components/ForgotPassword";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -26,7 +27,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />} />
           <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
+
           <Route path="contact" element={<Contact />} />
           <Route
             path="/store"
@@ -42,6 +43,7 @@ function App() {
             path="/cart"
             element={<MyCart cart={cart} setCart={setCart} />}
           />
+          <Route path="/forgotpassword" element={<ForgotPassword />} />
         </Routes>
         <Footer />
       </BrowserRouter>

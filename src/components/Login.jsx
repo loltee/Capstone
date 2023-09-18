@@ -79,7 +79,9 @@ function Login({ token, setToken }) {
             <button onClick={handleSubmit} className="button border-0">
               Login
             </button>
-            <Link className="button">SignUp</Link>
+            <Link className="button" to="/signup">
+              SignUp
+            </Link>
           </div>
         </div>
       </form>

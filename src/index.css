@@ -603,3 +603,103 @@ footer:not(:first-child) {
 }
 
 /* contact page ends */
+/* signup page starts */
+/* .Signup {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #be7676;
+  padding: 20px;
+  background-color: white;
+  width: 567px;
+  margin: 30px auto;
+  box-shadow: 25px 25px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  text-align: center;
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  border-color: black;
+  border-style: solid;
+  line-height: 40px;
+} */
+
+/* .Signup h2 {
+  text-align: center;
+  padding: 10px;
+}
+ */
+
+.Signup {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Sign-up form styles */
+.Signup form {
+  display: flex;
+  flex-direction: column;
+}
+
+.Signup h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.Signup label {
+  margin-bottom: 10px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.Signup input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.Signup button {
+  background-color: #007bff;
+  color: gold;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.Signup button:hover {
+  background-color: #0056b3;
+}
+
+/* Link styles */
+.Signup .button {
+  text-align: center;
+  font-weight: bold;
+  color: #007bff;
+  text-decoration: none;
+  margin-top: 15px;
+  transition: color 0.3s ease;
+}
+
+.Signup .button:hover {
+  color: #0056b3;
+}
+
+/* Success and error message styles */
+.Signup p {
+  margin: 10px 0;
+  color: #4caf50; /* Success message color */
+}
+
+.Signup .error {
+  color: #f44336; /* Error message color */
+}
+
+/* signup page ends */
