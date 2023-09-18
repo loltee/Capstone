@@ -32,7 +32,10 @@ function MyCart({ cart, setCart }) {
     updatedCart.splice(index, 1);
     setCart(updatedCart);
   };
-
+  const checkout = () => {
+    // You can add logic here to handle the checkout process, such as sending a request to a payment gateway or clearing the cart after purchase.
+    alert("Checkout function will be implemented here.");
+  };
   if (cart.length > 0) {
     return (
       <div className="shopping-cart-container">
@@ -75,6 +78,9 @@ function MyCart({ cart, setCart }) {
           ))}
         </ul>
         <p className="total-price">Total Price: ${totalPrice.toFixed(2)}</p>
+        <button className="checkout-button" onClick={checkout}>
+          Checkout
+        </button>
       </div>
     );
   } else {
