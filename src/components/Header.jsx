@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useParams } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
 import Dropdown from "react-bootstrap/Dropdown";
 import LogOut from "./LogOut";
@@ -15,6 +15,15 @@ const Header = ({ token, cart }) => {
   );
 
   console.log("token", token);
+  const handleCategorySelect = (category) => {
+    fetch(`https://fakestoreapi.com/products/category/${category}`)
+      .then((res) => res.json())
+      .then((json) => console.log(json))
+      .catch((error) =>
+        console.error("Error fetching products by category:", error)
+      );
+  };
+
   return (
     <>
       <header className="header-top-strip py-3">
@@ -126,11 +135,26 @@ const Header = ({ token, cart }) => {
                       </span>
                     </Dropdown.Toggle>
                     <Dropdown.Menu variant="dark">
-                      <Dropdown.Item href="#/action-1">Jewelry</Dropdown.Item>
-                      <Dropdown.Item href="#/action-2">Clothes</Dropdown.Item>
-                      <Dropdown.Item href="#/action-3">
-                        Electronics
-                      </Dropdown.Item>
+                      <Dropdown.Menu variant="dark">
+                        <Dropdown.Item
+                          onClick={() => handleCategorySelect("jewelery")}
+                          href="jewelry"
+                        >
+                          Jewelry
+                        </Dropdown.Item>
+                        <Dropdown.Item
+                          onClick={() => handleCategorySelect("clothes")}
+                          href="clothes"
+                        >
+                          Clothes
+                        </Dropdown.Item>
+                        <Dropdown.Item
+                          onClick={() => handleCategorySelect("electronics")}
+                          href="electronics"
+                        >
+                          Electronics
+                        </Dropdown.Item>
+                      </Dropdown.Menu>
                     </Dropdown.Menu>
                   </Dropdown>
                 </div>

@@ -25,7 +25,7 @@ function App() {
         <Header token={token} cart={cart} />
         <Routes>
           <Route path="/" element={<Layout />} />
-          <Route index element={<Home />} />
+          <Route path="home" index element={<Home />} />
 
           <Route path="contact" element={<Contact />} />
           <Route
