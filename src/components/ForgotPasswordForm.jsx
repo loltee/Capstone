@@ -5,9 +5,13 @@ const ForgotPasswordForm = () => {
   const [email, setEmail] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
+    setIsLoading(true);
+
     try {
       // Mock API call (replace with your server-side logic)
       const response = await fetch("/api/forgot-password", {
@@ -21,12 +25,15 @@ const ForgotPasswordForm = () => {
       if (response.ok) {
         // Email sent successfully
         setSuccessMessage("Password reset email sent successfully.");
+      } else if (response.status === 404) {
+        setError("Email not found.");
       } else {
-        // Error occurred
         setError("An error occurred while sending the email.");
       }
     } catch (error) {
       setError("An error occurred while sending the email.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -45,7 +52,9 @@ const ForgotPasswordForm = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <button>Submit</button>
+        <button type="submit" disabled={isLoading}>
+          {isLoading ? "Sending..." : "Submit"}
+        </button>
         <Link className="forpass" to="/login">
           Back to Login
         </Link>

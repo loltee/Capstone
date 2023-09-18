@@ -1,6 +1,7 @@
 export async function getProduct() {
   const baseUrl = "https://fakestoreapi.com/";
   // const response = await fetch();
+  fetch("https://fakestoreapi.com/products/category/jewelery");
 
   fetch(baseUrl)
     .then((res) => res.json())

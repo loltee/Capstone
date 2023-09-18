@@ -4,7 +4,16 @@ import { BsSearch } from "react-icons/bs";
 import Dropdown from "react-bootstrap/Dropdown";
 import LogOut from "./LogOut";
 
-const Header = ({ token }) => {
+const Header = ({ token, cart }) => {
+  const totalQuantity = (cart || []).reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
+  const totalPrice = (cart || []).reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
+
   console.log("token", token);
   return (
     <>
@@ -85,8 +94,10 @@ const Header = ({ token }) => {
                   >
                     <img src="images/cart.svg" alt="cart" />
                     <div className="d-flex flex-column gap-10"></div>
-                    <span className="badge bg-white text-dark">0</span>
-                    <p className="mb-0">$ 0</p>
+                    <span className="badge bg-white text-dark">
+                      {totalQuantity}
+                    </span>
+                    <p className="mb-0">$ {totalPrice.toFixed(2)}</p>
                   </Link>
                 </div>
               </div>

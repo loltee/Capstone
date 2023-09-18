@@ -27,6 +27,35 @@ const OurStore = ({ cart, setCart }) => {
 
     getStore().catch(console.log(error));
   }, []);
+  useEffect(() => {
+    async function getJewelryStore() {
+      try {
+        const response = await fetch(`${baseUrl}/products/category/jewelery`);
+        const jewelryAPIResponse = await response.json();
+
+        if (jewelryAPIResponse) {
+          // Merge the jewelry products with the existing store
+          setStore((prevStore) => [...prevStore, ...jewelryAPIResponse]);
+        } else {
+          console.error("Could not fetch jewelry products");
+        }
+      } catch (error) {
+        console.error("Error fetching jewelry category:", error);
+      }
+    }
+
+    getJewelryStore();
+  }, []); // Run this effect only once on component mount
+
+  // Adding the new API call
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products/category/jewelery")
+      .then((res) => res.json())
+      .then((json) => console.log(json))
+      .catch((error) =>
+        console.error("Error fetching jewelry category:", error)
+      );
+  }, []); // Run this effect only once on component mount
 
   console.log("store", store);
 
