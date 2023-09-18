@@ -10,7 +10,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import OurStore from "./pages/ourStore";
 import SignUpForm from "./components/SignUpForm";
-import Login from "./components/login.jsx";
+import Login from "./components/Login";
 import MyCart from "./components/MyCart";
 import { useState } from "react";
 import LogOut from "./components/LogOut";
