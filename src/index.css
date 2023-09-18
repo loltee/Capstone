@@ -27,9 +27,17 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
-
+/* MyCart Starts */
 .shopping-cart-container {
-  max-width: 400px;
+  max-width: 600px;
+  margin: 5% auto;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  height: 500px;
+  overflow-y: auto;
+  /* max-width: 400px;
   margin: 10%;
   background-color: lightgrey;
   padding: 20px;
@@ -40,7 +48,7 @@
   margin-left: 559px;
   border: 3px solid black;
   scroll-behavior: smooth;
-  overflow: scroll;
+  overflow: scroll; */
 }
 .emptytag {
   font-weight: 600;
@@ -50,9 +58,12 @@
 
 .cart-title {
   font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  /* font-size: 24px;
   color: #333;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 20px; */
 }
 
 .input-container {
@@ -71,13 +82,20 @@
 }
 
 .add-button {
+  padding: 10px 20px;
   background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  /* background-color: #007bff;
   color: #fff;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 16px; */
 }
 
 .add-button:hover {
@@ -90,27 +108,72 @@
 }
 
 .cart-item {
-  display: flex;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  /* display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 0;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #ccc; */
+}
+.item-info {
+  flex: 1;
+}
+.item-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-price {
+  font-size: 18px;
+  font-weight: bold;
+}
+.item-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.item-quantity {
+  font-size: 14px;
+  color: #777;
+}
+
+.item-actions {
+  display: flex;
+  align-items: center;
 }
 
 .remove-button {
-  background-color: #dc3545;
+  background-color: #ff5c5c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  /* background-color: #dc3545;
   color: #fff;
   border: none;
   padding: 5px 10px;
   cursor: pointer;
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 14px; */
 }
 
 .remove-button:hover {
   background-color: #c82333;
 }
-
+.total-price {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: right;
+}
+/* MyCart ends */
 :root {
   --color-131921: var(--color-black) var(--color-red) var(--color-yellow);
 }

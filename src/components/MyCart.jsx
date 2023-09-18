@@ -15,51 +15,23 @@ function MyCart({ cart, setCart }) {
   useEffect(() => {
     let calculatedTotal = 0;
     cart.forEach((product) => {
-      calculatedTotal += product.price;
+      calculatedTotal += product.price * product.quantity; // Multiply price by quantity
     });
     setTotalPrice(calculatedTotal);
-  }, []);
-  // async function getCart() {
-  //   try {
-  //     const response = await fetch(`${baseUrl}carts`);
-  //     const APIResponse = await response.json();
-  //     setCart(APIResponse);
-  //   } catch (error) {
-  //     console.log(error.message);
-  //   }
-  // }
-  // getCart();
-  // if (location.state === null) {
-  //   setCart((prevcart) => [...prevcart, !location.state]);
-  // }
-
-  // console.log(cart);
+  }, [cart]); // Recalculate when cart changes
 
   const addItem = () => {
     if (item.trim() !== "") {
-      setCart([...cart, item]);
+      setCart([...cart, { title: item, price: 0, quantity: 1 }]);
       setItem("");
     }
   };
 
   const removeItem = (index) => {
     const updatedCart = [...cart];
-    console.log(index, "---------------");
-
     updatedCart.splice(index, 1);
     setCart(updatedCart);
-    console.log(cart);
   };
-  // useEffect(() => {
-  //   let calculatedTotal = 0;
-  //   cart.forEach((cart) => {
-  //     calculatedTotal += cart.price;
-  //   }, setTotalPrice(calculatedTotal)[cart]);
-  // });
-
-  // const updateQuanity = (id, value) => {};
-
-  console.log(cart, "hello", location.state);
 
   if (cart.length > 0) {
     return (
@@ -80,14 +52,25 @@ function MyCart({ cart, setCart }) {
         <ul className="cart-list">
           {cart.map((item, index) => (
             <li key={index} className="cart-item">
-              {item.price} {item.title} {item.quantity}
-              {/* {<img src={item.image} alt={item.title} />} */}
-              <button
-                className="remove-button"
-                onClick={() => removeItem(index)}
-              >
-                Remove
-              </button>
+              <div className="item-details">
+                <div className="item-info">
+                  <span className="item-title">{item.title}</span>
+                  <span className="item-quantity">
+                    Quantity: {item.quantity}
+                  </span>
+                </div>
+                <div className="item-actions">
+                  <span className="item-price">
+                    ${(item.price * item.quantity).toFixed(2)}
+                  </span>
+                  <button
+                    className="remove-button"
+                    onClick={() => removeItem(index)}
+                  >
+                    Remove
+                  </button>
+                </div>
+              </div>
             </li>
           ))}
         </ul>
