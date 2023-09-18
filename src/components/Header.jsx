@@ -4,7 +4,7 @@ import { BsSearch } from "react-icons/bs";
 import Dropdown from "react-bootstrap/Dropdown";
 import LogOut from "./LogOut";
 
-const Header = ({ token, cart }) => {
+const Header = ({ token, cart, setProductsHandler }) => {
   const totalQuantity = (cart || []).reduce(
     (total, item) => total + item.quantity,
     0
@@ -16,9 +16,16 @@ const Header = ({ token, cart }) => {
 
   console.log("token", token);
   const handleCategorySelect = (category) => {
-    fetch(`https://fakestoreapi.com/products/category/${category}`)
+    let url = `https://fakestoreapi.com/products/category/${category}`;
+
+    if (category == "allitems") {
+      url = "https://fakestoreapi.com/products";
+    }
+
+    console.log("testing");
+    fetch(url)
       .then((res) => res.json())
-      .then((json) => console.log(json))
+      .then((json) => setProductsHandler(json))
       .catch((error) =>
         console.error("Error fetching products by category:", error)
       );
@@ -137,20 +144,22 @@ const Header = ({ token, cart }) => {
                     <Dropdown.Menu variant="dark">
                       <Dropdown.Menu variant="dark">
                         <Dropdown.Item
+                          onClick={() => handleCategorySelect("allitems")}
+                        >
+                          All Items
+                        </Dropdown.Item>
+                        <Dropdown.Item
                           onClick={() => handleCategorySelect("jewelery")}
-                          href="jewelry"
                         >
                           Jewelry
                         </Dropdown.Item>
                         <Dropdown.Item
                           onClick={() => handleCategorySelect("clothes")}
-                          href="clothes"
                         >
                           Clothes
                         </Dropdown.Item>
                         <Dropdown.Item
                           onClick={() => handleCategorySelect("electronics")}
-                          href="electronics"
                         >
                           Electronics
                         </Dropdown.Item>

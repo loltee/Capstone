@@ -18,19 +18,27 @@ import LogOut from "./components/LogOut";
 function App() {
   const [cart, setCart] = useState([]);
   const [token, setToken] = useState([]);
+  const [products, setProducts] = useState([]);
 
   return (
     <>
       <BrowserRouter>
-        <Header token={token} cart={cart} />
+        <Header token={token} cart={cart} setProductsHandler={setProducts} />
         <Routes>
           <Route path="/" element={<Layout />} />
-          <Route path="home" index element={<Home />} />
+          <Route path="/home" index element={<Home />} />
 
-          <Route path="contact" element={<Contact />} />
+          <Route path="/contact" element={<Contact />} />
           <Route
             path="/store"
-            element={<OurStore cart={cart} setCart={setCart} />}
+            element={
+              <OurStore
+                cart={cart}
+                setCart={setCart}
+                products={products}
+                setProductsHandler={setProducts}
+              />
+            }
           />
           <Route path="/signup" element={<SignUpForm />} />
           <Route

@@ -31,7 +31,7 @@ function Login({ token, setToken }) {
       console.log(result);
       console.log(result.token);
       setToken(result.token);
-      navigate("/");
+      // navigate("/contact");
     } catch (error) {
       setError(error.message);
       console.log("gettingerrormessage");
