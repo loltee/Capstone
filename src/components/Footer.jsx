@@ -28,7 +28,7 @@ const Footer = () => {
                       aria-describedby="basic-addon2"
                     />
                     <span className="input-group-text p-2" id="basic-addon2">
-                      Subscribe
+                      <button>Subscribe</button>
                     </span>
                   </div>
                 </div>

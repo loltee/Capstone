@@ -1,9 +1,36 @@
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useParams } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
 import Dropdown from "react-bootstrap/Dropdown";
+import LogOut from "./LogOut";
 
-const Header = () => {
+const Header = ({ token, cart, setProductsHandler, setToken }) => {
+  const totalQuantity = (cart || []).reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
+  const totalPrice = (cart || []).reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
+
+  console.log("token", token);
+  const handleCategorySelect = (category) => {
+    let url = `https://fakestoreapi.com/products/category/${category}`;
+
+    if (category == "allitems") {
+      url = "https://fakestoreapi.com/products";
+    }
+
+    console.log("testing");
+    fetch(url)
+      .then((res) => res.json())
+      .then((json) => setProductsHandler(json))
+      .catch((error) =>
+        console.error("Error fetching products by category:", error)
+      );
+  };
+
   return (
     <>
       <header className="header-top-strip py-3">
@@ -42,7 +69,7 @@ const Header = () => {
                   aria-label="Search Product Here"
                   aria-describedby="basic-addon2"
                 />
-                <span className="input-group-text p-3" id="basic-addon2">
+                <span className="mic-group-text p-3" id="basic-addon2">
                   <BsSearch className="fs-6" />
                 </span>
               </div>
@@ -66,7 +93,10 @@ const Header = () => {
                   </Link>
                 </div>
                 <div>
-                  <Link className="d-flex align-items-center gap-10 text-white">
+                  <Link
+                    to="/login"
+                    className="d-flex align-items-center gap-10 text-white"
+                  >
                     <img src="images/user.svg" alt="user" />
                     <p className="mb-0">
                       Login <br /> My Account
@@ -74,16 +104,24 @@ const Header = () => {
                   </Link>
                 </div>
                 <div>
-                  <Link className="d-flex align-items-center gap-10 text-white">
+                  <Link
+                    to="cart"
+                    className="d-flex align-items-center gap-10 text-white"
+                  >
                     <img src="images/cart.svg" alt="cart" />
                     <div className="d-flex flex-column gap-10"></div>
-                    <span className="badge bg-white text-dark">0</span>
-                    <p className="mb-0">$ 500</p>
+                    <span className="badge bg-white text-dark">
+                      {totalQuantity}
+                    </span>
+                    <p className="mb-0">$ {totalPrice.toFixed(2)}</p>
                   </Link>
                 </div>
               </div>
             </div>
           </div>
+        </div>{" "}
+        <div className="d-flex align-items-center gap-10 text-white">
+          {token && <LogOut setToken={setToken} />}
         </div>
       </header>
       <header className="header-bottom py-3">
@@ -104,20 +142,35 @@ const Header = () => {
                       </span>
                     </Dropdown.Toggle>
                     <Dropdown.Menu variant="dark">
-                      <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                      <Dropdown.Item href="#/action-2">
-                        Another action
-                      </Dropdown.Item>
-                      <Dropdown.Item href="#/action-3">
-                        Something else
-                      </Dropdown.Item>
+                      <Dropdown.Menu variant="dark">
+                        <Dropdown.Item
+                          onClick={() => handleCategorySelect("allitems")}
+                        >
+                          All Items
+                        </Dropdown.Item>
+                        <Dropdown.Item
+                          onClick={() => handleCategorySelect("jewelery")}
+                        >
+                          Jewelry
+                        </Dropdown.Item>
+                        <Dropdown.Item
+                          onClick={() => handleCategorySelect("clothes")}
+                        >
+                          Clothes
+                        </Dropdown.Item>
+                        <Dropdown.Item
+                          onClick={() => handleCategorySelect("electronics")}
+                        >
+                          Electronics
+                        </Dropdown.Item>
+                      </Dropdown.Menu>
                     </Dropdown.Menu>
                   </Dropdown>
                 </div>
                 <div className="menu-links">
                   <div className="d-flex align-items-center gap-15">
                     <NavLink to="/">Home</NavLink>
-                    <NavLink to="/">Our Store</NavLink>
+                    <NavLink to="/store">Our Store</NavLink>
                     <NavLink to="/">Blogs</NavLink>
                     <NavLink to="/contact">Contact</NavLink>
                   </div>

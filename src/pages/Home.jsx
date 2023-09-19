@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Marquee from "react-fast-marquee";
 import BlogCard from "../components/blog";
-import ProductCard from "../components/productcard";
+import ProductCard from "../components/ProductCard";
 
 //  when using rounder-3 it makes the image corners and size rounded by 3px */
 

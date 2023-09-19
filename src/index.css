@@ -3,6 +3,177 @@
   padding: 0;
   box-sizing: border-box;
 }
+.Login {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #be7676;
+  padding: 20px;
+  background-color: white;
+  width: 567px;
+  margin: 30px auto;
+  box-shadow: 25px 25px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  text-align: center;
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  border-color: black;
+  border-style: solid;
+  line-height: 40px;
+}
+.Login h1 {
+  text-align: center;
+}
+.form-control {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+/* MyCart Starts */
+.shopping-cart-container {
+  max-width: 600px;
+  margin: 5% auto;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  height: 500px;
+  overflow-y: auto;
+  /* max-width: 400px;
+  margin: 10%;
+  background-color: lightgrey;
+  padding: 20px;
+  border-radius: 5px;
+  display: flow-root;
+  box-shadow: 0 55px 60px rgba(0, 0, 0, 0.1);
+  height: 400px;
+  margin-left: 559px;
+  border: 3px solid black;
+  scroll-behavior: smooth;
+  overflow: scroll; */
+}
+.emptytag {
+  font-weight: 600;
+  margin-left: 670px;
+  font-size: 50px;
+}
+
+.cart-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  /* font-size: 24px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px; */
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.item-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.add-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  /* background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px; */
+}
+
+.add-button:hover {
+  background-color: #0056b3;
+}
+
+.cart-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.cart-item {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc; */
+}
+.item-info {
+  flex: 1;
+}
+.item-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-price {
+  font-size: 18px;
+  font-weight: bold;
+}
+.item-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.item-quantity {
+  font-size: 14px;
+  color: #777;
+}
+
+.item-actions {
+  display: flex;
+  align-items: center;
+}
+
+.remove-button {
+  background-color: #ff5c5c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  /* background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px; */
+}
+
+.remove-button:hover {
+  background-color: #c82333;
+}
+.total-price {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: right;
+}
+/* MyCart ends */
 :root {
   --color-131921: var(--color-black) var(--color-red) var(--color-yellow);
 }
@@ -93,6 +264,11 @@ a {
 .dropdown-item {
   padding: right 50%;
 }
+.mic-group-text {
+  background-color: gold;
+  margin: 10px;
+}
+
 /* Header Part End Here */
 
 /* footer Start */
@@ -102,11 +278,13 @@ footer {
 footer:not(:first-child) {
   border-top: 1px solid red;
 }
-footer.input-group-text {
+.input-group-text {
   background-color: silver;
   padding: 8px 17px;
   font-size: 14px;
+  margin: 10px;
 }
+
 /* Footer End */
 
 /* Home Page Start */
@@ -387,3 +565,297 @@ footer.input-group-text {
 }
 
 /* Product cart ends */
+/* our store starts */
+
+.filter-card {
+  background-color: antiquewhite;
+  border-radius: 10px;
+  padding: 10px 15px;
+}
+.filter-title {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 20px;
+}
+.filter-card ul {
+  list-style-type: none;
+  font-size: 13px;
+  line-height: 30px;
+  color: black;
+  cursor: pointer;
+}
+
+.sub-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 15px;
+}
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.products {
+  width: 300px;
+  height: 300px; /* Set a fixed height to ensure uniform size */
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  text-align: center;
+  display: inline-block;
+  vertical-align: top; /* Align products at the top to ensure uniform alignment */
+  box-sizing: border-box;
+
+  /* max-width: 300px;
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  text-align: center;
+  box-sizing: content-box;
+  flex-wrap: wrap;
+  align-items: center;
+  display: inline-block; */
+}
+.products h1 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+.products img {
+  width: 75%;
+  height: 33%;
+
+  object-fit: contain;
+}
+.products ul {
+  padding: 0;
+  margin: 10px 0;
+  list-style: none;
+  text-align: left; /* Align list items to the left within the box */
+  padding-left: 0;
+}
+
+.products li {
+  font-size: 16px;
+  color: #555;
+  list-style: none;
+  margin: 10px 0;
+  margin-left: 52px;
+}
+
+.cart-item {
+  overflow: hidden;
+}
+/* our store ends */
+/* contact page starts */
+.contact-inner-wrapper {
+  padding: 30px 20px;
+  border-radius: 15px;
+  background-color: whitesmoke;
+  gap: 35px;
+}
+
+.contact-inner-wrapper > div {
+  width: 48%;
+}
+
+.inside {
+  font-style: italic;
+  font-size: 40px;
+  text-align: center;
+}
+.contact-inner-wrapper form. form-control {
+  background-color: antiquewhite;
+  border-radius: 10px;
+  border-color: transparent;
+  padding: 10px;
+}
+
+.contact-inner-wrapper ul {
+  list-style: none;
+}
+.touchbase {
+  margin-left: 120px;
+}
+
+/* contact page ends */
+/* signup page starts */
+/* .Signup {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #be7676;
+  padding: 20px;
+  background-color: white;
+  width: 567px;
+  margin: 30px auto;
+  box-shadow: 25px 25px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  text-align: center;
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  border-color: black;
+  border-style: solid;
+  line-height: 40px;
+} */
+
+/* .Signup h2 {
+  text-align: center;
+  padding: 10px;
+}
+ */
+
+.Signup {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Sign-up form styles */
+.Signup form {
+  display: flex;
+  flex-direction: column;
+}
+
+.Signup h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.Signup label {
+  margin-bottom: 10px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.Signup input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.Signup button {
+  background-color: #007bff;
+  color: gold;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.Signup button:hover {
+  background-color: #0056b3;
+}
+
+/* Link styles */
+.Signup .button {
+  text-align: center;
+  font-weight: bold;
+  color: #007bff;
+  text-decoration: none;
+  margin-top: 15px;
+  transition: color 0.3s ease;
+}
+
+.Signup .button:hover {
+  color: #0056b3;
+}
+
+/* Success and error message styles */
+.Signup p {
+  margin: 10px 0;
+  color: #4caf50; /* Success message color */
+}
+
+.Signup .error {
+  color: #f44336; /* Error message color */
+}
+
+/* signup page ends */
+/* forgot password form starts */
+.Forgot-Password-Form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for the heading */
+.Forgot-Password-Form h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Styling for success and error messages */
+.Forgot-Password-Form p {
+  font-size: 16px;
+  color: #007bff; /* Blue for success */
+  margin-top: 10px;
+}
+
+/* Styling for the form */
+.forgotpassword-form label {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.forgotpassword-form input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Styling for the submit button */
+.forgotpassword-form button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-top: 20px;
+}
+
+.forgotpassword-form button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Styling for the "Back to Login" link */
+.forpass {
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  margin-top: 20px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.forpass:hover {
+  text-decoration: underline;
+}
+
+/* forgot password form ends */
