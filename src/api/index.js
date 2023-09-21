@@ -22,6 +22,9 @@ export async function getCart() {
   const baseUrl = "https://fakestoreapi.com/";
   // const response = await fetch();
 
+  fetch("https://fakestoreapi.com/carts/user/2")
+
+
   fetch("https://fakestoreapi.com/carts")
     .then((res) => res.json())
     .then((json) => console.log(json));

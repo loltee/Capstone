@@ -1,17 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import LogOut from "./LogOut";
 import { useNavigate } from "react-router-dom";
 import Breadcrumb from "./Breadcrumb";
 import Meta from "./meta";
 
-function Login({ token, setToken }) {
+function Login({ token, setToken, setCart }) {
   const [error, setError] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [userCart, setUserCart] = useState({});
   const navigate = useNavigate();
 
   const [successMessage, setSuccessMessage] = useState("");
+
+  useEffect(() => {
+    if (token) {
+      fetch("https://fakestoreapi.com/carts/user/2", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then((response) => response.json())
+        .then((cartData) => {
+          setCart(cartData);
+        })
+        .catch((error) => {
+          console.error("Error fetching user's cart:", error);
+        });
+    }
+  }, [token]);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -32,9 +50,13 @@ function Login({ token, setToken }) {
       console.log(result);
       console.log(result.token);
       setToken(result.token);
+      setUserCart({ username: username, cartData: [] });
+      console.log("usercart", userCart);
+      localStorage.setItem("username", JSON.stringify(userCart));
       navigate("/home");
     } catch (error) {
       setError(error.message);
+      console.error("Error fetching user's cart:", error);
       console.log("gettingerrormessage");
     }
   }
@@ -88,6 +110,11 @@ function Login({ token, setToken }) {
       </form>
       {successMessage && <p>{successMessage}</p>}
       {error && <p>{error}</p>}
+      {token && (
+        <div>
+          <LogOut setToken={setToken} setCart={setCart} />
+        </div>
+      )}
     </div>
   );
 }

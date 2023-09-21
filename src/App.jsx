@@ -16,11 +16,12 @@ import { useState } from "react";
 import LogOut from "./components/LogOut";
 
 function App() {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState("");
   const [token, setToken] = useState(null);
   const [products, setProducts] = useState([]);
   console.log("headertoken");
   console.log(token);
+  console.log("app.jsx", cart);
   return (
     <>
       <BrowserRouter>
@@ -49,7 +50,9 @@ function App() {
           <Route path="/signup" element={<SignUpForm />} />
           <Route
             path="/login"
-            element={<Login token={token} setToken={setToken} />}
+            element={
+              <Login token={token} setToken={setToken} setCart={setCart} />
+            }
           />
           <Route path="/logout" element={<LogOut />} />
           <Route
