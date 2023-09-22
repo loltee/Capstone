@@ -13,20 +13,20 @@ const ProductCard = () => {
   const [error, setError] = useState();
   const baseUrl = "https://fakestoreapi.com/";
 
-  useEffect(() => {
-    async function getProduct() {
-      const response = await fetch(`${baseUrl}/product/1`);
-      const APIResponse = await response.json();
+  // useEffect(() => {
+  //   async function getProduct() {
+  //     const response = await fetch(`${baseUrl}/product/1`);
+  //     const APIResponse = await response.json();
 
-      if (APIResponse.success) {
-        setProduct(APIResponse.data.product);
-      } else {
-        setError(error.message);
-      }
-    }
-    getProduct();
-  }, []);
-  console.log(product);
+  //     if (APIResponse.success) {
+  //       setProduct(APIResponse.data.product);
+  //     } else {
+  //       setError(error.message);
+  //     }
+  //   }
+  //   getProduct();
+  // }, []);
+  // console.log(product);
   return (
     <div className="col-3">
       <div className="product-card position-relative">

@@ -1,50 +1,56 @@
-import React from "react";
-import { NavLink, Link, useParams } from "react-router-dom";
-import { BsSearch } from "react-icons/bs";
-import Dropdown from "react-bootstrap/Dropdown";
-import LogOut from "./LogOut";
+import {useEffect, useState} from 'react';
+import {NavLink, Link, useParams} from 'react-router-dom';
+import {BsSearch} from 'react-icons/bs';
+import Dropdown from 'react-bootstrap/Dropdown';
+import LogOut from './LogOut';
 
-const Header = ({ token, cart, setProductsHandler, setToken }) => {
-  const totalQuantity = (cart || []).reduce(
-    (total, item) => total + item.quantity,
-    0
-  );
-  const totalPrice = (cart || []).reduce(
-    (total, item) => total + item.price * item.quantity,
-    0
-  );
+const Header = ({token, cart, setProductsHandler, setToken, productsCart}) => {
+  const [totalQuantity, setTotalQuantity] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
+  console.log(totalQuantity, totalPrice);
 
-  console.log("token", token);
+  useEffect(() => {
+    setTotalQuantity(
+      (cart || []).reduce((total, item) => total + item.quantity, 0)
+    );
+    setTotalPrice(
+      (productsCart || []).reduce((total, item) => total + item, 0)
+    );
+  }, [productsCart, cart]);
+
   const handleCategorySelect = (category) => {
     let url = `https://fakestoreapi.com/products/category/${category}`;
 
-    if (category == "allitems") {
-      url = "https://fakestoreapi.com/products";
+    if (category == 'allitems') {
+      url = 'https://fakestoreapi.com/products';
     }
 
-    console.log("testing");
+    console.log('testing');
     fetch(url)
       .then((res) => res.json())
       .then((json) => setProductsHandler(json))
       .catch((error) =>
-        console.error("Error fetching products by category:", error)
+        console.error('Error fetching products by category:', error)
       );
   };
 
   return (
     <>
-      <header className="header-top-strip py-3">
-        <div className="container-xxl">
-          <div className="row">
-            <div className="col-6">
-              <p className="text-white mb-0">
+      <header className='header-top-strip py-3'>
+        <div className='container-xxl'>
+          <div className='row'>
+            <div className='col-6'>
+              <p className='text-white mb-0'>
                 Free Shipping Over $100 & Free Returns
               </p>
             </div>
-            <div className="col-6">
-              <p className="text-end text-white mb-0">
+            <div className='col-6'>
+              <p className='text-end text-white mb-0'>
                 Hotline:
-                <a className="text-white" href="tel +(800) 123-4567">
+                <a
+                  className='text-white'
+                  href='tel +(800) 123-4567'
+                >
                   (800) 123-4567
                 </a>
               </p>
@@ -52,114 +58,132 @@ const Header = ({ token, cart, setProductsHandler, setToken }) => {
           </div>
         </div>
       </header>
-      <header className="header-upper py-3">
-        <div className="container-xxl">
-          <div className="row align-items-center">
-            <div className="cal-2">
+      <header className='header-upper py-3'>
+        <div className='container-xxl'>
+          <div className='row align-items-center'>
+            <div className='cal-2'>
               <h2>
-                <Link className="title">Proper Gadgets</Link>
+                <Link className='title'>Proper Gadgets</Link>
               </h2>
             </div>
-            <div className="col-5">
-              <div className="input-group">
+            <div className='col-5'>
+              <div className='input-group'>
                 <input
-                  type="text"
-                  className="form-control py-2"
-                  placeholder="Search Product Here"
-                  aria-label="Search Product Here"
-                  aria-describedby="basic-addon2"
+                  type='text'
+                  className='form-control py-2'
+                  placeholder='Search Product Here'
+                  aria-label='Search Product Here'
+                  aria-describedby='basic-addon2'
                 />
-                <span className="mic-group-text p-3" id="basic-addon2">
-                  <BsSearch className="fs-6" />
+                <span
+                  className='mic-group-text p-3'
+                  id='basic-addon2'
+                >
+                  <BsSearch className='fs-6' />
                 </span>
               </div>
             </div>
-            <div className="col-5">
-              <div className="header-upper-links d-flex align-items-center justify-content-between">
+            <div className='col-5'>
+              <div className='header-upper-links d-flex align-items-center justify-content-between'>
                 <div>
-                  <Link className="d-flex align-items-center gap-10 text-white">
-                    <img src="images/compare.svg" alt="compare" />
-                    <p className="mb-0">
+                  <Link className='d-flex align-items-center gap-10 text-white'>
+                    <img
+                      src='images/compare.svg'
+                      alt='compare'
+                    />
+                    <p className='mb-0'>
                       Compare <br /> Products
                     </p>
                   </Link>
                 </div>
                 <div>
-                  <Link className="d-flex align-items-center gap-10 text-white">
-                    <img src="images/wishlist.svg" alt="wishlist" />
-                    <p className="mb-0">
+                  <Link className='d-flex align-items-center gap-10 text-white'>
+                    <img
+                      src='images/wishlist.svg'
+                      alt='wishlist'
+                    />
+                    <p className='mb-0'>
                       Favorite <br /> Wishlist
                     </p>
                   </Link>
                 </div>
                 <div>
                   <Link
-                    to="/login"
-                    className="d-flex align-items-center gap-10 text-white"
+                    to='/login'
+                    className='d-flex align-items-center gap-10 text-white'
                   >
-                    <img src="images/user.svg" alt="user" />
-                    <p className="mb-0">
+                    <img
+                      src='images/user.svg'
+                      alt='user'
+                    />
+                    <p className='mb-0'>
                       Login <br /> My Account
                     </p>
                   </Link>
                 </div>
                 <div>
                   <Link
-                    to="cart"
-                    className="d-flex align-items-center gap-10 text-white"
+                    to='cart'
+                    className='d-flex align-items-center gap-10 text-white'
                   >
-                    <img src="images/cart.svg" alt="cart" />
-                    <div className="d-flex flex-column gap-10"></div>
-                    <span className="badge bg-white text-dark">
+                    <img
+                      src='images/cart.svg'
+                      alt='cart'
+                    />
+                    <div className='d-flex flex-column gap-10'></div>
+                    <span className='badge bg-white text-dark'>
                       {totalQuantity}
                     </span>
-                    <p className="mb-0">$ {totalPrice.toFixed(2)}</p>
+                    <p className='mb-0'>$ {totalPrice.toFixed(2)}</p>
                   </Link>
                 </div>
               </div>
             </div>
           </div>
-        </div>{" "}
-        <div className="d-flex align-items-center gap-10 text-white">
+        </div>{' '}
+        <div className='d-flex align-items-center gap-10 text-white'>
           {token && <LogOut setToken={setToken} />}
         </div>
       </header>
-      <header className="header-bottom py-3">
-        <div className="container-xxl">
-          <div className="row">
-            <div className="col-12">
-              <div className="menu-bottom d-flex align-items-center gap-30">
+      <header className='header-bottom py-3'>
+        <div className='container-xxl'>
+          <div className='row'>
+            <div className='col-12'>
+              <div className='menu-bottom d-flex align-items-center gap-30'>
                 <div>
                   <Dropdown>
                     <Dropdown.Toggle
-                      className="btn btn-secondary dropdown-toggle bg-transparent border-0 gap-15 d-flex align-items-center"
-                      variant="success"
-                      id="dropdown-basic "
+                      className='btn btn-secondary dropdown-toggle bg-transparent border-0 gap-15 d-flex align-items-center'
+                      variant='success'
+                      id='dropdown-basic '
                     >
-                      <img src="images/menu.svg" alt="" />
-                      <span className="me-5 d-incline-block">
+                      <img
+                        src='images/menu.svg'
+                        alt=''
+                      />
+                      <span className='me-5 d-incline-block'>
                         Shop Categories
                       </span>
                     </Dropdown.Toggle>
-                    <Dropdown.Menu variant="dark">
-                      <Dropdown.Menu variant="dark">
+                    <Dropdown.Menu variant='dark'>
+                      <Dropdown.Menu variant='dark'>
                         <Dropdown.Item
-                          onClick={() => handleCategorySelect("allitems")}
+                          onClick={() => handleCategorySelect('allitems')}
                         >
                           All Items
                         </Dropdown.Item>
                         <Dropdown.Item
-                          onClick={() => handleCategorySelect("jewelery")}
+                          onClick={() => handleCategorySelect('jewelery')}
                         >
                           Jewelry
                         </Dropdown.Item>
                         <Dropdown.Item
-                          onClick={() => handleCategorySelect("clothes")}
+                          onClick={() => handleCategorySelect('clothes')}
                         >
                           Clothes
                         </Dropdown.Item>
                         <Dropdown.Item
-                          onClick={() => handleCategorySelect("electronics")}
+                          onClick={() => handleCategorySelect('electronics')}
                         >
                           Electronics
                         </Dropdown.Item>
@@ -167,12 +191,12 @@ const Header = ({ token, cart, setProductsHandler, setToken }) => {
                     </Dropdown.Menu>
                   </Dropdown>
                 </div>
-                <div className="menu-links">
-                  <div className="d-flex align-items-center gap-15">
-                    <NavLink to="/">Home</NavLink>
-                    <NavLink to="/store">Our Store</NavLink>
-                    <NavLink to="/">Blogs</NavLink>
-                    <NavLink to="/contact">Contact</NavLink>
+                <div className='menu-links'>
+                  <div className='d-flex align-items-center gap-15'>
+                    <NavLink to='/'>Home</NavLink>
+                    <NavLink to='/store'>Our Store</NavLink>
+                    <NavLink to='/'>Blogs</NavLink>
+                    <NavLink to='/contact'>Contact</NavLink>
                   </div>
                 </div>
               </div>
